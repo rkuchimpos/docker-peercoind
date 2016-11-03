@@ -19,7 +19,7 @@ RUN apt-get update -y \
     && rm /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
     ## ppcoind
-    && curl -SLO4 https://github.com/hrobeers/peercoin-advanced-relay/archive/v${PPC_VERSION}.tar.gz \
+    && curl -SLO4 https://github.com/rkuchimpos/peercoin-advanced-relay/archive/v${PPC_VERSION}.tar.gz \
     && tar xf v${PPC_VERSION}.tar.gz \
     && echo "$PPC_SHA256 v${PPC_VERSION}.tar.gz" | sha256sum -c - \
     && cd peercoin-advanced-relay-${PPC_VERSION} \
