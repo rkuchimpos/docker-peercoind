@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER peerchemist <peerchemist@protonmail.ch> (@peerboxPPC)
 
-ENV PPC_VERSION=0.5.4pars
+ENV PPC_VERSION=master
 ENV PPC_SHA256 0eadf070acdc6d926bc45e98effe6fb2205ab811257eef105f2520eb08527d2b
 ENV GOSU_VERSION=1.9
 
