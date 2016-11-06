@@ -21,13 +21,12 @@ RUN apt-get update -y \
     ## ppcoind
     && curl -SLO4 https://github.com/rkuchimpos/peercoin-advanced-relay/archive/${PPC_VERSION}.tar.gz \
     && tar xf ${PPC_VERSION}.tar.gz \
-    && echo "$PPC_SHA256 ${PPC_VERSION}.tar.gz" | sha256sum -c - \
     && cd peercoin-advanced-relay-${PPC_VERSION} \
     ## make ppcoind
     && make -f makefile.unix USE_UPNP= -e PIE=1 -C src \
     && install -Dm755 "src/ppcoind" "/usr/local/bin/" \
     ## cleanup
-    && cd .. && rm v${PPC_VERSION}.tar.gz && rm -r peercoin-advanced-relay-${PPC_VERSION} \
+    && cd .. && rm ${PPC_VERSION}.tar.gz && rm -r peercoin-advanced-relay-${PPC_VERSION} \
     && apt-get remove -y --purge curl ca-certificates build-essential libssl-dev libdb++-dev \
     libboost-program-options-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev \
     && apt-get -y clean \
